@@ -1,0 +1,11 @@
+services:
+  
+  backend :
+    container_name : backend
+    image: file_encoder_api:latest
+    build: .
+    restart: always
+    ports:
+      - 8000:8000
+    env_file:
+      - .env

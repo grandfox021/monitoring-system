@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+python-multipart
+pymongo
+python-dotenv
+prometheus-client
