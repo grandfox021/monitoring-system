@@ -1,0 +1,22 @@
+FROM python:3.12-slim
+
+# Create non-root user
+RUN useradd -m appuser
+
+USER appuser
+WORKDIR /app
+
+# Ensure local pip binaries are in PATH
+ENV PATH="/home/appuser/.local/bin:$PATH"
+
+# Copy and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy project files
+COPY . .
+
+EXPOSE 8000
+
+# Run Gunicorn
+CMD ["gunicorn", "webhook.wsgi:application", "--bind", "0.0.0.0:8000"]
