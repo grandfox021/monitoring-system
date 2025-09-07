@@ -1,4 +1,4 @@
-# 🔎 Monitoring Project with FastAPI, MongoDB, Prometheus, Grafana & Alerting
+# 🔎 Monitoring Project with Django, FastAPI, MongoDB, Prometheus, Grafana & Alerting
 
 ## 📖 Overview
 This project is a **monitoring-enabled web application stack** running on **three isolated VMs** (via VMware).  
